@@ -19,7 +19,7 @@ pipeline {
       }
       stage('Report') {
          steps {
-            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'Assignment-10-RR', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credential-assign10', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
             sh 'aws cloudformation describe-stack-resources --region us-east-1 --stack-name jenkins'
             }
          }
